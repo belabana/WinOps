@@ -1,7 +1,7 @@
-﻿<#
+<#
 .NOTES
-	Name: GetNTP.ps1
-	Author: Bela Bana | https://github.com/belabana
+    Name: GetNTP.ps1
+    Author: Bela Bana | https://github.com/belabana
     Request: I needed to automate the task to query NTP settings from multiple Domain Controllers.
     Classification: Public
     Disclaimer: Author does not take responsibility for any unexpected outcome that could arise from using this script.
@@ -13,7 +13,7 @@
 .DESCRIPTION
     This script will query the NTP settings of the specified Domain Controllers.
     Transcript and timestamps are added to calculate runtime and write output to a .log file. Path: “C:\temp”
-    It should be executed with a Domain Administrator account from a Domain Controller.
+    It should be executed with elevated access by a Domain Administrator from a Domain Controller.
 
 .PARAMETER PDCEmulator
     The hostname of PDC Emulator. This machine syncs time from the preferred external NTP source.
@@ -21,18 +21,13 @@
 .PARAMETER DCControllers
     The list of Domain Controllers except the PDCEmulator. These machines use W32Time service to sync time across the domain.
 
-.PARAMETER Credential
-    Credentials of a user with Domain Administrator access.
 #>
 param(
     [parameter(Mandatory=$true)]
     [System.String] $PDCEmulator,
 
     [parameter(Mandatory=$true)]
-    [System.String[]] $DCControllers,
-
-    [Parameter(Mandatory=$true)]
-    [System.Management.Automation.PSCredential] $ADAdminCredential
+    [System.String[]] $DCControllers
 )
 begin {
 $TranscriptPath = "C:\temp\GetNTP_$(Get-Date -Format yyyy-MM-dd-HH-mm).log"
