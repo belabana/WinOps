@@ -1,7 +1,7 @@
 <#
 .NOTES
-	Name: ForceShellExecute.ps1
-	Author: Bela Bana | https://github.com/belabana
+    Name: ForceShellExecute.ps1
+    Author: Bela Bana | https://github.com/belabana
     Request: I needed to automate the deployment of a registry key to fix a Microsoft Office related issue on 150+ workstations.
              Then I upgraded my script to identify and show the architecture as well as version of MS Office installed on the PCs. 
     Reference: https://docs.microsoft.com/en-US/office/troubleshoot/office-suite-issues/cannot-locate-server-when-click-hyperlink
