@@ -1,7 +1,7 @@
-﻿<#
+<#
 .NOTES
-	Name: PurgeMSTeams.ps1
-	Author: Bela Bana | https://github.com/belabana
+    Name: PurgeMSTeams.ps1
+    Author: Bela Bana | https://github.com/belabana
     Story: I needed to automate the uninstallation of Microsoft Teams on multiple terminal servers.
     Classification: Public
     Disclaimer: Author does not take responsibility for any unexpected outcome that could arise from using this script.
