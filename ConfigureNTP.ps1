@@ -1,4 +1,4 @@
-﻿<#
+<#
 .NOTES
 	Name: ConfigureNTP.ps1
 	Author: Bela Bana | https://github.com/belabana
@@ -14,7 +14,7 @@
     This script will reconfigure NTP settings for the specified Domain Controllers.
     You need to define the FQDN of the external NTP source server, a PDC Emulator and all the other Domain Controllers.
     Transcript and timestamps are added to calculate runtime and write output to a .log file. Path: “C:\temp”
-    It should be executed from a Domain Controller with elevated access level and the credentials of a Domain Administrator.
+    It should be executed with elevated access by a Domain Administrator from a Domain Controller.
 
 .PARAMETER NTPSource
     The FQDN of the desired external NTP service. Recommended value: time.windows.com
@@ -25,8 +25,6 @@
 .PARAMETER DCControllers
     The list of Domain Controllers except the PDC Emulator. These machines will use W32Time service to sync time across the domain.
 
-.PARAMETER Credential
-    Credentials of a user with Domain Administrator access.
 #>
 param(
     [parameter(Mandatory=$true)]
@@ -36,10 +34,7 @@ param(
     [System.String] $PDCEmulator,
 
     [parameter(Mandatory=$true)]
-    [System.String[]] $DCControllers,
-
-    [Parameter(Mandatory=$true)]
-    [System.Management.Automation.PSCredential] $ADAdminCredential
+    [System.String[]] $DCControllers
 )
 begin {
 $TranscriptPath = "C:\temp\ConfigureNTP_$(Get-Date -Format yyyy-MM-dd-HH-mm).log"
