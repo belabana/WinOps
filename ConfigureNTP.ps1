@@ -1,7 +1,7 @@
 <#
 .NOTES
-	Name: ConfigureNTP.ps1
-	Author: Bela Bana | https://github.com/belabana
+    Name: ConfigureNTP.ps1
+    Author: Bela Bana | https://github.com/belabana
     Request: I needed to reconfigure NTP settings for multiple Domain Controllers at once.
     Classification: Public
     Disclaimer: Author does not take responsibility for any unexpected outcome that could arise from using this script.
